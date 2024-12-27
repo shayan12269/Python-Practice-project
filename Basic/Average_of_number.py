@@ -1,14 +1,22 @@
-Input_number = input("Average of numbers: ")
+# Practice 8 | Compute Average of Numbers
 
 try:
-    number_list = [float(num.strip()) for num in Input_number.split() if num.strip()]
+    # Prompt the user to input numbers separated by spaces
+    input_number = input("Average of numbers: ")
+    
+    # Split the input string into individual number strings, strip any whitespace, and convert to float
+    number_list = [float(num.strip()) for num in input_number.split() if num.strip()]
+    
+    # Check if the list is empty
     if len(number_list) == 0:
         raise ValueError("You have to write a number!")
-
-    count = len(number_list)
-    Average = sum(number_list)/count
     
-    print(f"Average of the {number_list} is: {Average:.2f}")
+    # Calculate the average
+    average = sum(number_list) / len(number_list)
+    
+    # Print the result with two decimal places
+    print(f"Average of the {number_list} is: {average:.2f}")
     
 except ValueError as e:
-    print(f"Erore:{e}") 
+    print(f"Error: {e}") 
+
